@@ -1,22 +1,157 @@
-.App {
-  text-align: center;
+body{
+  font-family: 'Open Sans', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
+.navbar{
+  display:flex;
+  background-color: red;
+  justify-content: space-between;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.nav-title{
+  margin-left:2rem;
+  color:white;
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+
+.searchBar{
+  margin-top:1rem;
+  margin-right: 0.5rem;
+  padding: 0.5rem;
+  padding-right: 2rem;
+  border-radius: 5px; 
+  font-size:1rem;
+}
+
+.searchButton{
+  padding: 0.5rem;
+  border-radius: 5px; 
+  border:2px solid white;
+  margin-right:3rem;
+  background-color: red;
   color: white;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor:pointer;
+  transition: all 0.3s linear;
+  outline:none;
 }
 
-.App-link {
-  color: #09d3ac;
+.searchButton:hover{
+  background-color:white;
+  color:red;
+}
+
+.meal-container{
+  width:90vw;
+  display:grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-column-gap: 1.5rem;
+  margin: auto;
+}
+
+/* STYLE FOR THE RECIPE COMPONENT */
+
+.meal{
+  background: lightgray;
+  color:black;
+  border-radius: 0.8rem;
+  margin: 1rem 0;
+  }
+
+img{
+  width: 100%;
+  border-top-left-radius: 0.8rem;
+  border-top-right-radius: 0.8rem;
+  display:block;
+}
+
+.img-container{
+  position:relative;
+}
+
+.close-btn{
+  position:absolute;
+  display:block;
+  top: 5%;
+  right:5%;
+  color:red;
+  font-size: 2rem;
+  cursor:pointer;
+  opacity:0;
+  transition: all 0.3s linear;
+}
+
+.img-container:hover .close-btn{
+  opacity:1
+}
+
+.meal-info{
+  padding: 0 0.5rem;
+}
+
+h4{
+  text-transform:uppercase;
+  color: red;
+}
+
+h5{
+  text-transform:capitalize;
+  color:red;
+  margin-top:-15px;
+}
+
+span{
+  color: red;
+  margin: 0.5rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+p{
+  color:red;
+}
+
+/* MEDIA QUERIS */
+@media screen and (max-width: 868px){
+  .meal-container{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      grid-column-gap: 1.5rem;
+  }
+  .navbar{
+    text-align:center;
+    flex-direction: column;
+  }
+  .searchForm{
+    margin-left:6rem;
+    margin-bottom:1rem;
+  }
+  
+}
+
+@media screen and (max-width: 406px){
+  .meal-container{
+      grid-template-columns: 1fr;
+      grid-column-gap: 1.5rem;
+  }
+
+  .navbar{
+    text-align:center;
+    flex-direction: column;
+  }
+
+  .searchForm{
+    margin-left:1.5rem;
+    margin-bottom:1rem;
+  }
+
+  .searchButton{
+    margin-left:1.6rem;
+    margin-top:1rem;
+    padding: 0.5rem 5.7rem;
+
+  }
+  
 }
